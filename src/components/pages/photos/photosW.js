@@ -73,6 +73,8 @@ const PhotosWrappr = styled.div`
         color: black;
     }
     }
+    
+    
 `;
 
 export default PhotosWrappr;

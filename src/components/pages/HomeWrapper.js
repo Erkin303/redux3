@@ -1,7 +1,24 @@
 import styled from "styled-components";
 
 const HomeWrappr = styled.div`
+
+/* .homesozz{
+        display: none;
+        text-align: center;
+        color: white;
+        text-shadow: 3px 4px gray;
+}
+
+@media screen and (max-width:700px){
+       
+       .homesozz{
+       display: block;
+       text-align: center;
+} */
+
 padding: 70px 0;
+    
+
 .homeCard{
     padding: 10px;
     color: black;

@@ -4,7 +4,7 @@ const DashboradWrappr = styled.div`
     display: flex;
    
     .sidebar{
-        width: 300px;
+        width: 270px;
         background: rgb(135,65,181);
         background: linear-gradient(90deg, rgba(135,65,181,1) 0%, rgba(34,78,170,1) 29%, rgba(93,218,226,1) 70%, rgba(74,66,167,1) 100%);  
         height: 100vh;
@@ -24,9 +24,13 @@ const DashboradWrappr = styled.div`
         list-style-type: none;
         li{
             margin: 17px;
-            background-color: white;
+           
            p{
-               padding: 5px;
+               padding: 7px;
+               background-color: white;
+               border-radius: 10px;
+               font-weight: bold;
+               font-size: 17px;
            }
         border-radius: 10px;
         }
@@ -70,6 +74,12 @@ const DashboradWrappr = styled.div`
             background: linear-gradient(90deg, rgba(135,65,181,1) 0%, rgba(34,78,170,1) 29%, rgba(93,218,226,1) 67%, rgba(74,66,167,1) 100%);            padding: 20px;
             overflow-y: scroll !important;
             height: 90vh;
+        }
+    }
+
+    @media screen and (max-width:700px){
+        .sidebar{
+            display: none;
         }
     }
 
