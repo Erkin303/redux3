@@ -55,11 +55,11 @@ const Dashboard = ({ children }) => {
         <DashboradWrappr>
             <div className={`sidebar ${show && "show" || ""}`}>
                 <div className="d-flex justify-content-center" >
-                    <ul className='w-100'>
+                    <ul className={`${show && "d-block" || 'd-none'}`}>
                         {dataDashboard.map((v, i) => {
-                            return <li>
-                                <div data-aos-delay={`${100 + i * 150}`} data-aos="fade-right">
-                                    <Link to={v.to} exact={v.exact}><div><p> {v.ri}  {v.component}</p></div>
+                            return <li >
+                                <div data-aos-delay={`${100 + i * 150}`} data-aos="fade-right" >
+                                    <Link to={v.to} exact={v.exact}><div><p className='forHover'> {v.ri}  <span className="sidebarWords">{v.component}</span></p></div>
                                     </Link>
                                 </div>
                             </li>

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const HomeWrappr = styled.div`
+background-color: rgba(41, 125, 182, 0.7);
+
 
 /* .homesozz{
         display: none;
@@ -21,10 +23,10 @@ padding: 70px 0;
 
 .homeCard{
     padding: 10px;
-    color: black;
+    color: rgba(214, 214, 214, 0.993);
     font-weight: bold;
     font-size: 20px;
-    background-color: white;
+    background-color: rgba(126, 126, 126, 0.993);
     border-radius: 15px;
     box-shadow: 0 5px 4px 3px rgba(0, 0, 0, 0.404);
 }
