@@ -25,4 +25,9 @@ const SetTodos5 = async (dispatch) => {
     dispatch({ type: "SET_TODOS_COMENTS", payload: data3 });
 }
 
-export { SetTodos, SetTodos2, SetTodos3, SetTodos4, SetTodos5 };
+const headerButton = (dispatch) => {
+    dispatch({ type: "BUTTON_SHOW" })
+
+}
+
+export { SetTodos, SetTodos2, SetTodos3, SetTodos4, SetTodos5, headerButton };

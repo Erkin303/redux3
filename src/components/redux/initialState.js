@@ -3,7 +3,8 @@ const initialState = {
     users: [],
     albums: [],
     photos: [],
-    comments: []
+    comments: [],
+    headerButton: true
 };
 
 export default initialState;

@@ -14,36 +14,23 @@ const Photos = () => {
     return (
         <PhotosWrappr>
             <h1 className='mainword'>Photos</h1>
-            <div className='border3'>
-                <table className=' table-primary table-hover'>
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>albumId</th>
-                            <th>title</th>
-                            <th>imgurl</th>
-                            <th>thumbnailUrl</th>
+            <div className="row">
+                {data.map((v, i) => {
+                    return <div className="col-md-4 col-lg-3 col-sm-6 mb-2">
+                        <div className='photosCard' >
+                            <div>
+                                <p><span className='fw-bold'>{v.id}</span></p>
+                                <p>Title: {v.title}</p>
+                            </div>
+                            <div className='d-flex justify-content-center'>
+                                <img src={v.url} alt="" className='imgUrl' />
+                            </div>
 
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {data.map(v =>
-                            <tr key={v.id} class="table-primary trinf">
-                                <td >
-                                    <p className='idStyle'>{v.id}</p>
-                                </td>
-                                <td><p>{v.albumId}</p></td>
-                                <td><p>{v.title}</p></td>
-                                <td><div className='img1'><img src={v.url} alt="" className='img2' /></div></td>
-                                <td><div className='img3'><img src={v.thumbnailUrl} alt="" className='img2' /></div></td>
-
-                            </tr>
-                        )}
-
-                    </tbody>
-                </table>
+                        </div>
+                    </div>
+                })}
             </div>
+
 
 
         </PhotosWrappr>

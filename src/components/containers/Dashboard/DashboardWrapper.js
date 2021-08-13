@@ -4,10 +4,26 @@ const DashboradWrappr = styled.div`
     display: flex;
    
     .sidebar{
-        width: 270px;
+        width: 0;
+        transition: 0.3s;
         background: rgb(135,65,181);
-        background: linear-gradient(90deg, rgba(135,65,181,1) 0%, rgba(34,78,170,1) 29%, rgba(93,218,226,1) 70%, rgba(74,66,167,1) 100%);  
+        background: linear-gradient(90deg, black, gray);   
         height: 100vh;
+        &.show{
+            width: 270px;
+            li{
+                margin: 17px;
+                p{
+               padding: 7px;
+               background-color: white;
+               border-radius: 10px;
+               font-weight: bold;
+               font-size: 17px;
+               box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.582);
+           }
+            }
+          
+        }
         a{
         text-decoration: none;
         color: black;
@@ -23,14 +39,15 @@ const DashboradWrappr = styled.div`
     ul{
         list-style-type: none;
         li{
-            margin: 17px;
+            
            
            p{
-               padding: 7px;
+               padding: 0;
                background-color: white;
                border-radius: 10px;
                font-weight: bold;
                font-size: 17px;
+               box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.582);
            }
         border-radius: 10px;
         }
@@ -71,7 +88,8 @@ const DashboradWrappr = styled.div`
         
         .content{
             background: rgb(135,65,181);
-            background: linear-gradient(90deg, rgba(135,65,181,1) 0%, rgba(34,78,170,1) 29%, rgba(93,218,226,1) 67%, rgba(74,66,167,1) 100%);            padding: 20px;
+            background: linear-gradient(90deg, black, gray);
+            padding: 20px;
             overflow-y: scroll !important;
             height: 90vh;
         }

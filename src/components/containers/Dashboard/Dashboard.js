@@ -4,12 +4,46 @@ import { Link } from 'react-router-dom'
 import DashboradWrappr from './DashboardWrapper'
 import ThemeG from './../../theme'
 import { useEffect } from 'react'
+
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+
+import { AiOutlineHome } from "react-icons/ai";
+import { FiUsers } from "react-icons/fi";
+import { BiArchive } from "react-icons/bi";
+import { BsList } from "react-icons/bs";
+import { CgAlbum } from "react-icons/cg";
+import { HiOutlinePhotograph } from "react-icons/hi";
+import { FaRegComments } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux'
+import { headerButton } from '../../redux/actions'
+
+
+
+
+
+
+
+
+
+
+const dataDashboard = [
+    { to: "/", component: "Home", exact: true, ri: <AiOutlineHome /> },
+    { to: "/dashboard/users", component: "Users", ri: <FiUsers /> },
+    { to: "/dashboard/todos", component: "Todos", ri: <BiArchive /> },
+    { to: "/dashboard/albums", component: "Albums", ri: <CgAlbum /> },
+    { to: "/dashboard/photos", component: "Photos", ri: <HiOutlinePhotograph /> },
+    { to: "/dashboard/comments", component: "Comments", ri: <FaRegComments /> },
+
+]
+
 
 const Dashboard = ({ children }) => {
     const { theme, Toggletheme } = useContext(ThemeG)
     console.log(theme, Toggletheme);
+    const dispatch = useDispatch();
+
+    const show = useSelector(state => state.headerButton)
 
     useEffect(() => {
         Aos.init();
@@ -19,16 +53,18 @@ const Dashboard = ({ children }) => {
 
     return (
         <DashboradWrappr>
-            <div className="sidebar">
+            <div className={`sidebar ${show && "show" || ""}`}>
                 <div className="d-flex justify-content-center" >
                     <ul className='w-100'>
+                        {dataDashboard.map((v, i) => {
+                            return <li>
+                                <div data-aos-delay={`${100 + i * 150}`} data-aos="fade-right">
+                                    <Link to={v.to} exact={v.exact}><div><p> {v.ri}  {v.component}</p></div>
+                                    </Link>
+                                </div>
+                            </li>
+                        })}
 
-                        <li><div data-aos-delay="100" data-aos="fade-right"><Link to="/"><div><p>Home</p></div></Link></div></li>
-                        <li><div data-aos-delay="300" data-aos="fade-right"><Link to="/dashboard/users"><div><p>Users</p></div></Link></div></li>
-                        <li><div data-aos-delay="500" data-aos="fade-right"><Link to="/dashboard/todos"><div><p>Todos</p></div></Link></div></li>
-                        <li><div data-aos-delay="700" data-aos="fade-right"><Link to="/dashboard/albums"><div><p>Albums</p></div></Link></div></li>
-                        <li><div data-aos-delay="900" data-aos="fade-right"><Link to="/dashboard/photos"><div><p>Photos</p></div></Link></div></li>
-                        <li><div data-aos-delay="1100" data-aos="fade-right"><Link to="/dashboard/comments"><div><p>Comments</p></div></Link></div></li>
                     </ul>
                 </div>
 
@@ -36,6 +72,7 @@ const Dashboard = ({ children }) => {
             <div className="rightSide">
                 <header>
                     <div className='d-flex align-items-center' data-aos="fade-left">
+                        <button onClick={() => headerButton(dispatch)} className='btn btn-dark'><BsList /></button>
                         <img src="https://logos-world.net/wp-content/uploads/2020/09/Pinterest-Logo.png" alt="" />
 
                     </div>

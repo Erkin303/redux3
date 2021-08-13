@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboards from "./components/pages/Dashboards";
 import Home from "./components/pages/Home";
 import store from "./components/redux/store";
+import './App.css'
 
 
 function App() {

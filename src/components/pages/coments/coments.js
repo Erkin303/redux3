@@ -15,31 +15,18 @@ const Comments = () => {
     return (
         <PhotosWrappr>
             <h1 className='mainword'>Comments</h1>
-            <table className=' table-primary table-hover'>
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>body</th>
-                    </tr>
-                </thead>
+            <div className="row">
+                {data.map((v, i) => {
+                    return <div className="col-md-6 col-sm-12 col-lg-4 mb-2">
+                        <div className='commentsCard' >
+                            <p>{v.id}. {v.name}</p>
+                            <p>Email: <a href={v.email}>{v.email}</a></p>
+                            <p>Body:  {v.body}</p>
 
-                <tbody>
-                    {data.map(v =>
-                        <tr key={v.id} class="table-primary trinf">
-                            <td >
-                                <p className='idStyle'>{v.id}</p>
-                            </td>
-                            <td><p>{v.name}</p></td>
-                            <td><p>{v.email}</p></td>
-                            <td><p>{v.body}</p></td>
-                        </tr>
-                    )}
-
-                </tbody>
-            </table>
-
+                        </div>
+                    </div>
+                })}
+            </div>
 
         </PhotosWrappr>
     )

@@ -8,6 +8,7 @@ const Reducer = (state = initialState, action) => {
         case "SET_TODOS_ALBUMS": return { ...state, albums: action.payload };
         case "SET_TODOS_PHOTOS": return { ...state, photos: action.payload };
         case "SET_TODOS_COMENTS": return { ...state, comments: action.payload };
+        case "BUTTON_SHOW": return { ...state, headerButton: !state.headerButton }
 
 
 
