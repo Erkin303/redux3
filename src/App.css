@@ -3,6 +3,5 @@
 } */
 *{
   box-sizing: border-box;
-  flex-wrap: wrap;
-  /* color: rgba(41, 125, 182, 0.993); */
+  flex-wrap: wrap; 
 }

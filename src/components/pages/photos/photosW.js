@@ -7,8 +7,18 @@ const PhotosWrappr = styled.div`
         min-height: 250px;
         border-radius: 15px;
         box-shadow: 0 5px 4px 3px rgba(0, 0, 0, 0.404);
-        background-color: white;
+        background-color: rgba(185, 217, 238, 0.993);
         box-sizing: border-box !important;
+        color: black;
+        font-weight: bold;
+        &:hover{
+            transition:0.3s;
+            box-shadow: 0 7px 6px 5px rgba(0, 0, 0, 0.404);
+        }
+        a{
+            text-decoration: none;
+            color: gray;
+        }
     }
     .todosCard{
         padding: 15px;
@@ -16,7 +26,7 @@ const PhotosWrappr = styled.div`
         min-height: 240px;
         border-radius: 15px;
         box-shadow: 0 5px 4px 3px rgba(0, 0, 0, 0.404);
-        background-color: white;
+        background-color: rgba(185, 217, 238, 0.993);
         box-sizing: border-box !important;
 
     }
@@ -26,21 +36,33 @@ const PhotosWrappr = styled.div`
         min-height: 260px;
         border-radius: 15px;
         box-shadow: 0 5px 4px 3px rgba(0, 0, 0, 0.404);
-        background-color: white;
+        background-color: rgba(185, 217, 238, 0.993);
         box-sizing: border-box !important;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+         &:hover{
+            transition:0.3s;
+            box-shadow: 0 7px 6px 5px rgba(0, 0, 0, 0.404);
+        }
 
     }
     .commentsCard{
         padding: 15px;
         margin: 15px;
-        min-height: 320px;
+        min-height: 350px;
         border-radius: 15px;
         box-shadow: 0 5px 4px 3px rgba(0, 0, 0, 0.404);
-        background-color: white;
+        background-color: rgba(185, 217, 238, 0.993);
         box-sizing: border-box !important;
+        a{
+            text-decoration: none;
+            color: gray;
+        }
+         &:hover{
+            transition:0.3s;
+            box-shadow: 0 7px 6px 5px rgba(0, 0, 0, 0.404);
+        }
        
 
     }
@@ -55,9 +77,9 @@ const PhotosWrappr = styled.div`
     
 
     .mainword{
-        color: white;
+        color: rgba(39, 53, 61, 0.993);
         font-weight: bold;
-        text-shadow: 3px 4px rgba(0, 0, 0, 0.582);
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.582);
         text-align: center;
         padding: 15px 0;
     }

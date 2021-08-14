@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 const DashboradWrappr = styled.div`
     display: flex;
+    height: 100%;
+    .rightul{
+        display: flex;
+        align-items:center;
+    }
   
    
     .sidebar{
@@ -9,6 +14,7 @@ const DashboradWrappr = styled.div`
         transition: 0.9s;
         background-color: rgba(41, 125, 182, 0.993) ;
         height: 100vh;
+        
         margin: 15px !important;
         border-radius: 20px !important;
         position: sticky !important;
@@ -16,6 +22,10 @@ const DashboradWrappr = styled.div`
         left: 0;
 
         &.show{
+            ul{
+                margin:10px 0;
+                padding: 0;
+            }
             width: 270px;
             li{
                 margin: 17px;
@@ -65,15 +75,17 @@ const DashboradWrappr = styled.div`
     }
 
     }
+    
+
     .rightSide{
         flex: 1;
-        height: 100vh;
+        height: 100%;
         
         header{
             background-color: rgba(41, 125, 182, 0.993);
             padding: 10px;
             box-shadow: 0 2px 3px 0 black;
-            position: sticky;
+            position: sticky !important;
             top: 0;
             z-index:100;
             display: flex;
@@ -113,8 +125,17 @@ const DashboradWrappr = styled.div`
           
         }
     }
+    .dashb{
+            display: block;
+        }
 
-    @media screen and (max-width:700px){
+    @media screen and (max-width:850px){
+        .rightul{
+            display:none;
+        }
+        .dashb{
+            display: none !important;
+        }
         .sidebar{
             
             ul{

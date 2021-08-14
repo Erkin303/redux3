@@ -31,7 +31,7 @@ const dataDashboard = [
     { to: "/", component: "Home", exact: true, ri: <AiOutlineHome /> },
     { to: "/dashboard/users", component: "Users", ri: <FiUsers /> },
     { to: "/dashboard/todos", component: "Todos", ri: <BiArchive /> },
-    { to: "/dashboard/albums", component: "Albums", ri: <CgAlbum /> },
+    { to: "/dashboard/albums", component: "Albums", ri: <FaRegComments /> },
     { to: "/dashboard/photos", component: "Photos", ri: <HiOutlinePhotograph /> },
     { to: "/dashboard/comments", component: "Comments", ri: <FaRegComments /> },
 
@@ -55,6 +55,7 @@ const Dashboard = ({ children }) => {
         <DashboradWrappr>
             <div className={`sidebar ${show && "show" || ""}`}>
                 <div className="d-flex justify-content-center" >
+                    <h1 className={`dashb text-center text-light ${show && "d-block" || 'd-none'}`} >Dashboard</h1>
                     <ul className={`${show && "d-block" || 'd-none'}`}>
                         {dataDashboard.map((v, i) => {
                             return <li >
@@ -71,18 +72,22 @@ const Dashboard = ({ children }) => {
             </div>
             <div className="rightSide">
                 <header>
-                    <div className='d-flex align-items-center' data-aos="fade-left">
-                        <button onClick={() => headerButton(dispatch)} className='btn btn-dark'><BsList /></button>
-                        <img src="https://logos-world.net/wp-content/uploads/2020/09/Pinterest-Logo.png" alt="" />
+                    <div className='d-flex align-items-center mb-2' data-aos="fade-left">
+                        <div >
+                            <button onClick={() => headerButton(dispatch)} className='btn btn-light'><BsList /></button>
+                            <img src="https://logos-world.net/wp-content/uploads/2020/09/Pinterest-Logo.png" alt="" />
+                        </div>
 
                     </div>
-                    <div className='d-flex align-items-center' data-aos="fade-left">
-                        <ul>
-                            <li><a href="#">Menu</a></li>
-                            <li><a href="#">Abote</a></li>
-                            <li><a href="#">Information</a></li>
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
+                    <div className='rightul' data-aos="fade-left">
+                        <div className='d-flex align-items-center'>
+                            <ul>
+                                <li><a href="#">Menu</a></li>
+                                <li><a href="#">Abote</a></li>
+                                <li><a href="#">Information</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
                     </div>
                     {/* <button onClick={Toggletheme} className={`ms-1 btn btn-${theme == "light" ? "light" : "dark"}`} >{theme == "light" ? "Light" : "Dark"} </button> */}
                 </header>
